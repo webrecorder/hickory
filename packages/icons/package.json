@@ -1,0 +1,8 @@
+{
+  "name": "@webrecorder/icons",
+  "version": "1.0.0",
+  "description": "Webrecorder's custom icons",
+  "main": "index.js",
+  "repository": "https://github.com/webrecorder/hickory",
+  "license": "MIT"
+}

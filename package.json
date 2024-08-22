@@ -1,0 +1,12 @@
+{
+  "name": "hickory",
+  "version": "1.0.0",
+  "description": "Webrecorder's Design System",
+  "main": "index.js",
+  "repository": "https://github.com/webrecorder/hickory",
+  "author": "emma <hi@emma.cafe>",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
