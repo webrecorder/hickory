@@ -10,6 +10,6 @@
     "@iconify/tools": "^4.0.5"
   },
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node --no-warnings=ExperimentalWarning scripts/build.js"
   }
 }
