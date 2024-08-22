@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Webrecorder's design tokens",
   "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/webrecorder/hickory",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
 }
