@@ -2,75 +2,68 @@ import {
   importDirectory,
   cleanupSVG,
   runSVGO,
+  parseColors,
+  isEmptyColor,
   exportJSONPackage,
 } from "@iconify/tools";
+import { version } from "prettier";
 
-(async () => {
-  const iconSet = await importDirectory("src", {
-    prefix: "wr",
-  });
+import packageInfo from "../package.json" with { type: "json" };
 
-  iconSet.forEach((name, type) => {
-    if (type !== "icon") {
-      return;
-    }
+const iconSet = await importDirectory("src");
 
-    const svg = iconSet.toSVG(name);
-    if (!svg) {
-      // Invalid icon
-      iconSet.remove(name);
-      return;
-    }
+iconSet.forEach((name, type) => {
+  if (type !== "icon") {
+    return;
+  }
 
-    // Clean up and optimise icons
-    try {
-      // Clean up icon code
-      cleanupSVG(svg);
+  const svg = iconSet.toSVG(name);
+  if (!svg) {
+    // Invalid icon
+    iconSet.remove(name);
+    return;
+  }
 
-      // Assume icon is monotone: replace color with currentColor, add if missing
-      // If icon is not monotone, remove this code
-      // parseColors(svg, {
-      //   defaultColor: "currentColor",
-      //   callback: (attr, colorStr, color) => {
-      //     return !color || isEmptyColor(color) ? colorStr : "currentColor";
-      //   },
-      // });
+  // Clean up and optimize icons
+  try {
+    // Clean up icon code
+    cleanupSVG(svg);
 
-      // Optimize
-      runSVGO(svg);
-    } catch (err) {
-      // Invalid icon
-      console.error(`Error parsing ${name}:`, err);
-      iconSet.remove(name);
-      return;
-    }
+    // Assume icon is monotone: replace color with currentColor, add if missing
+    // If icon is not monotone, remove this code
+    parseColors(svg, {
+      defaultColor: "currentColor",
+      callback: (attr, colorStr, color) => {
+        return !color || isEmptyColor(color) ? colorStr : "currentColor";
+      },
+    });
 
-    // Update icon
-    iconSet.fromSVG(name, svg);
-  });
+    // Optimize
+    runSVGO(svg);
+  } catch (err) {
+    // Invalid icon
+    console.error(`Error parsing ${name}:`, err);
+    iconSet.remove(name);
+    return;
+  }
 
-  // Target directory
-  const target = `dist/${iconSet.prefix}`;
+  // Update icon
+  iconSet.fromSVG(name, svg);
+});
 
-  // Export package
-  await exportJSONPackage(iconSet, {
-    target,
-    package: {
-      name: `@webrecorder/icons`,
-      version: "1.0.0",
-    },
-    cleanup: true,
-    /*
-       customFiles: {
-           'README.md': 'README!',
-       },
-       */
-  });
+// Target directory
+const target = `dist/${iconSet.prefix}`;
 
-  // Publish NPM package
-  /*
-   await execAsync('npm publish --access=public --silent', {
-       cwd: target,
-   });
-   */
-})();
+// Export package
+await exportJSONPackage(iconSet, {
+  target,
+  package: packageInfo,
+  cleanup: true,
+});
+
+// Publish NPM package
+/*
+await execAsync('npm publish --access=public --silent', {
+    cwd: target,
+});
+*/

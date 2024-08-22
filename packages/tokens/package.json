@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "repository": "https://github.com/webrecorder/hickory",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "node scripts/build.js"
   }
