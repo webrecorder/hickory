@@ -10,7 +10,8 @@
     "packages/*"
   ],
   "scripts": {
-    "version": "changeset version && yarn install --frozen-lockfile"
+    "version": "changeset version && yarn install --frozen-lockfile",
+    "publish": "yarn workspaces run publish"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
