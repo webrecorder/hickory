@@ -6,7 +6,6 @@ import {
   isEmptyColor,
   exportJSONPackage,
 } from "@iconify/tools";
-import { version } from "prettier";
 
 import packageInfo from "../package.json" with { type: "json" };
 
@@ -54,12 +53,10 @@ iconSet.forEach((name, type) => {
 // Target directory
 const target = `dist/${iconSet.prefix}`;
 
-const { private: _, ...outputPackage } = packageInfo;
-
 // Export package
 await exportJSONPackage(iconSet, {
   target,
-  package: outputPackage,
+  package: packageInfo,
   cleanup: true,
 });
 
