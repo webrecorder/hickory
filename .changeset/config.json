@@ -5,7 +5,7 @@
     { "repo": "webrecorder/hickory" }
   ],
   "commit": false,
-  "fixed": [],
+  "fixed": [["@webrecorder/*"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
