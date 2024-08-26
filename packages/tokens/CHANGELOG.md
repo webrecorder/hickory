@@ -1,5 +1,11 @@
 # @webrecorder/tokens
 
+## 0.0.4
+
+### Patch Changes
+
+- [`61bb698`](https://github.com/webrecorder/hickory/commit/61bb698bdcbac408a3f824cab4d024bda317a6ff) Thanks [@emma-sg](https://github.com/emma-sg)! - add testing script for initial publish & fix npm things
+
 ## 0.0.3
 
 ### Patch Changes
