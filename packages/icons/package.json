@@ -1,7 +1,6 @@
 {
   "name": "@webrecorder/icons",
   "version": "0.0.2",
-  "private": true,
   "description": "Webrecorder's custom icons",
   "type": "module",
   "repository": "https://github.com/webrecorder/hickory",
