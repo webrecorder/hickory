@@ -1,12 +1,13 @@
 {
   "name": "@webrecorder/tokens",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Webrecorder's design tokens",
-  "main": "index.js",
   "type": "module",
   "repository": "https://github.com/webrecorder/hickory",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "build": "node --no-warnings=ExperimentalWarning scripts/build.js"
+    "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
+    "prepublishOnly": "yarn build",
+    "publish": "npm publish"
   }
 }

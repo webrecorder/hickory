@@ -1,8 +1,8 @@
 {
   "name": "@webrecorder/icons",
-  "version": "1.0.0",
+  "version": "0.0.2",
+  "private": true,
   "description": "Webrecorder's custom icons",
-  "main": "index.js",
   "type": "module",
   "repository": "https://github.com/webrecorder/hickory",
   "license": "AGPL-3.0-or-later",
@@ -10,6 +10,8 @@
     "@iconify/tools": "^4.0.5"
   },
   "scripts": {
-    "build": "node --no-warnings=ExperimentalWarning scripts/build.js"
+    "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
+    "prepublishOnly": "yarn build",
+    "publish": "npm publish dist"
   }
 }

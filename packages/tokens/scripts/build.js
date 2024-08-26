@@ -37,7 +37,7 @@ const output = await prettier.format(
   { parser: "babel" }
 );
 
-const path = join("dist", "theme.js");
+const path = join("dist", "tw-theme.js");
 
 await mkdir(dirname(path), { recursive: true });
 
