@@ -3,7 +3,10 @@
   "version": "0.0.3",
   "description": "Webrecorder's custom icons",
   "type": "module",
-  "repository": "https://github.com/webrecorder/hickory",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webrecorder/hickory.git"
+  },
   "license": "AGPL-3.0-or-later",
   "devDependencies": {
     "@iconify/tools": "^4.0.5"

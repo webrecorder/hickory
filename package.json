@@ -3,7 +3,10 @@
   "version": "0.0.2",
   "description": "Webrecorder's Design System",
   "type": "module",
-  "repository": "https://github.com/webrecorder/hickory",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webrecorder/hickory.git"
+  },
   "author": "emma <hi@emma.cafe>",
   "private": true,
   "workspaces": [

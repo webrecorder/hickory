@@ -3,7 +3,10 @@
   "version": "0.0.3",
   "description": "Webrecorder's design tokens",
   "type": "module",
-  "repository": "https://github.com/webrecorder/hickory",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webrecorder/hickory.git"
+  },
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
