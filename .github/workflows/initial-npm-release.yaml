@@ -1,0 +1,47 @@
+name: Publish Package to npmjs
+
+on:
+  release:
+    types: [published]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+          cache: "yarn"
+
+      - name: Yarn Install
+        run: yarn install --frozen-lockfile
+
+      - name: Yarn Build
+        run: yarn workspaces run build
+
+      - name: publish icons
+        run: npm publish --access public
+        working-directory: packages/icons
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: publish tokens
+        run: npm publish --access public
+        working-directory: packages/tokens
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # - name: Create Release Pull Request or Publish to npm
+      #   id: changesets
+      #   uses: changesets/action@v1
+      #   with:
+      #     # This expects you to have a script called release which does a build for your packages and calls changeset publish
+      #     publish: yarn changeset publish
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
