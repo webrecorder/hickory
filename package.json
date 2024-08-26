@@ -1,6 +1,6 @@
 {
   "name": "hickory",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Webrecorder's Design System",
   "type": "module",
   "repository": "https://github.com/webrecorder/hickory",
@@ -9,11 +9,19 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "version": "changeset version && yarn install --frozen-lockfile"
+  },
   "devDependencies": {
     "prettier": "^3.3.3",
     "typescript": "^5.5.4"
   },
   "engines": {
-    "node": ">20"
+    "node": ">=20"
+  },
+  "packageManager": "yarn@1.22.22",
+  "dependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7"
   }
 }
