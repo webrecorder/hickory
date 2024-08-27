@@ -9,8 +9,7 @@
   },
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
-    "build:sd": "style-dictionary build",
+    "build": "node scripts/build.js",
     "do-publish": "yarn publish"
   },
   "devDependencies": {
@@ -19,13 +18,13 @@
   },
   "files": [
     "dist",
-    "globals"
+    "tokens"
   ],
   "exports": {
     "./*": {
       "types": "./dist/*.d.ts",
       "default": "./dist/*.js"
     },
-    "./globals/*": "./globals/*"
+    "./tokens/*": "./tokens/*"
   }
 }

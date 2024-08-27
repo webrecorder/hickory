@@ -1,22 +1,10 @@
-/**
- * Makeshift Tailwind theme generator for colors
- *
- * Should be replaced with something like Style Dictionary at some point soon!
- */
-
-import { mkdir, writeFile } from "node:fs/promises";
-import { join, dirname } from "node:path";
+import StyleDictionary from "style-dictionary";
 import * as prettier from "prettier";
 
-import colors from "../globals/color.json" with { type: "json" };
+const sd = new StyleDictionary("config.json");
 
 /**
- * @typedef {{$value: string, $type?: string}} Value
- * @typedef {Value | {[k: string]: GroupOrValue}} GroupOrValue
- */
-
-/**
- * @param {GroupOrValue} obj
+ * @param {import("style-dictionary").TransformedTokens} obj
  */
 function formatGroup(obj) {
   /** @typedef {string | {[key: string]: OutputColor}} OutputColor */
@@ -35,7 +23,7 @@ function formatGroup(obj) {
 }
 
 /**
- * @param {GroupOrValue} obj
+ * @param {import("style-dictionary").TransformedTokens} obj
  */
 function declareGroup(obj) {
   let res = "";
@@ -54,27 +42,25 @@ function declareGroup(obj) {
   return res;
 }
 
-const output = await prettier.format(
-  // @ts-ignore
-  `module.exports = ${JSON.stringify(formatGroup(colors))}`,
-  { parser: "babel" }
-);
+sd.registerFormat({
+  name: "tailwind-js",
+  format: async ({ dictionary }) => {
+    return await prettier.format(
+      `module.exports = ${JSON.stringify(formatGroup(dictionary.tokens))};`,
+      { parser: "babel" }
+    );
+  },
+});
 
-const typeOutput = await prettier.format(
-  `declare const tokens: {
-  ${declareGroup(
-    // @ts-ignore
-    colors
-  )}
-};
+sd.registerFormat({
+  name: "tailwind-typedef",
+  format: async ({ dictionary }) => {
+    return await prettier.format(
+      `declare const tokens: {${declareGroup(dictionary.tokens)}};
   export default tokens;`,
-  { parser: "typescript" }
-);
+      { parser: "typescript" }
+    );
+  },
+});
 
-const path = join("dist", "tw-theme.js");
-const declarationPath = join("dist", "tw-theme.d.ts");
-
-await mkdir(dirname(path), { recursive: true });
-
-await writeFile(path, output);
-await writeFile(declarationPath, typeOutput);
+await sd.buildAllPlatforms();

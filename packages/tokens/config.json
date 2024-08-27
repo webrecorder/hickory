@@ -1,24 +1,12 @@
 {
-  "source": ["globals/**/*.json"],
+  "source": ["tokens/**/*.json"],
   "platforms": {
-    "css": {
-      "transformGroup": "css",
-      "buildPath": "dist/css/",
-      "files": [
-        {
-          "destination": "tokens.css",
-          "format": "css/variables"
-        }
-      ]
-    },
-    "js": {
+    "tailwind": {
       "transformGroup": "js",
-      "buildPath": "dist/js/",
+      "buildPath": "dist/tailwind/",
       "files": [
-        {
-          "destination": "tokens.js",
-          "format": "javascript/es6"
-        }
+        { "destination": "theme.colors.js", "format": "tailwind-js" },
+        { "destination": "theme.colors.d.ts", "format": "tailwind-typedef" }
       ]
     }
   }

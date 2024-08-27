@@ -7,6 +7,9 @@
     "white": {
       "$value": "#ffffff"
     },
+    "offWhite": {
+      "$value": "#f9f7f3"
+    },
     "gray": {
       "50": {
         "$value": "#eeeeee"
