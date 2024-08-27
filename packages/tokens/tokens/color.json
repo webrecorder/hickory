@@ -329,6 +329,10 @@
       "900": {
         "$value": "#180327"
       }
+    },
+    "brand": {
+      "blue": { "$value": "{colors.cyan.400}" },
+      "green": { "$value": "{colors.lime.500}" }
     }
   }
 }
