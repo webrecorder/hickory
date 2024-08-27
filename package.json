@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "version": "changeset version && yarn install --frozen-lockfile",
-    "publish": "yarn workspaces run publish --access public"
+    "publish": "yarn workspaces run do-publish --access public"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
