@@ -13,6 +13,6 @@
   },
   "scripts": {
     "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
-    "publish": "yarn publish dist --access public"
+    "publish": "yarn publish dist"
   }
 }
