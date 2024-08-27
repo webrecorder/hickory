@@ -1,5 +1,11 @@
 # @webrecorder/tokens
 
+## 0.0.9
+
+### Patch Changes
+
+- [`5368f02`](https://github.com/webrecorder/hickory/commit/5368f02263c18775e801b598782a89f98279ba8b) Thanks [@emma-sg](https://github.com/emma-sg)! - specify exports explicitly
+
 ## 0.0.8
 
 ### Patch Changes
