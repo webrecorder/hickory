@@ -10,7 +10,8 @@
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
-    "build:sd": "style-dictionary build"
+    "build:sd": "style-dictionary build",
+    "publish": "yarn publish dist --access public"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
