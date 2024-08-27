@@ -66,7 +66,8 @@ const typeOutput = await prettier.format(
     // @ts-ignore
     colors
   )}
-}`,
+};
+  export default tokens;`,
   { parser: "typescript" }
 );
 
