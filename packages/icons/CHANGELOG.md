@@ -1,5 +1,11 @@
 # @webrecorder/icons
 
+## 0.0.8
+
+### Patch Changes
+
+- [`eefdd41`](https://github.com/webrecorder/hickory/commit/eefdd41bfd17cd1be6f53e0ea89a8eb862ab2bc6) Thanks [@emma-sg](https://github.com/emma-sg)! - bump version
+
 ## 0.0.7
 
 ### Patch Changes
