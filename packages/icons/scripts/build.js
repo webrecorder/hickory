@@ -53,10 +53,12 @@ iconSet.forEach((name, type) => {
 // Target directory
 const target = `dist/${iconSet.prefix}`;
 
+const {scripts: _scripts, ...pkg} = packageInfo
+
 // Export package
 await exportJSONPackage(iconSet, {
   target,
-  package: packageInfo,
+  package: pkg,
   cleanup: true,
 });
 
