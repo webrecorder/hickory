@@ -12,7 +12,7 @@
     "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
     "build:sd": "style-dictionary build",
     "prepublishOnly": "yarn build",
-    "publish": "npm publish"
+    "publish": "npm publish dist"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
