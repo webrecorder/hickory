@@ -1,6 +1,6 @@
 {
   "name": "@webrecorder/tokens",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Webrecorder's design tokens",
   "type": "module",
   "repository": {
