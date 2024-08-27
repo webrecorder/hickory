@@ -22,7 +22,10 @@
     "globals"
   ],
   "exports": {
-    "./*": "./dist/*",
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
     "./globals/*": "./globals/*"
   }
 }
