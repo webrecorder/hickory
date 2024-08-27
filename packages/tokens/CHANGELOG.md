@@ -1,5 +1,13 @@
 # @webrecorder/tokens
 
+## 0.0.12
+
+### Patch Changes
+
+- [`eac78aa`](https://github.com/webrecorder/hickory/commit/eac78aaf3908de179e383739fe69bbcec9cdd54e) Thanks [@emma-sg](https://github.com/emma-sg)! - Add brand color aliases
+
+- [`4f8565c`](https://github.com/webrecorder/hickory/commit/4f8565cbf9f341df7ec67b83bf40e3627b04a7a8) Thanks [@emma-sg](https://github.com/emma-sg)! - Swap to style-dictionary & custom formats for generating Tailwind config & typedef
+
 ## 0.0.11
 
 ### Patch Changes
