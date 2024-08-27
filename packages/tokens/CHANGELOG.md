@@ -1,5 +1,11 @@
 # @webrecorder/tokens
 
+## 0.0.10
+
+### Patch Changes
+
+- [`dd6ad94`](https://github.com/webrecorder/hickory/commit/dd6ad946d364173a89fcad685c692584e6a855ac) Thanks [@emma-sg](https://github.com/emma-sg)! - add generated types for tokens
+
 ## 0.0.9
 
 ### Patch Changes
