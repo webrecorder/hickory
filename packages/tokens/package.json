@@ -11,7 +11,7 @@
   "scripts": {
     "build": "node --no-warnings=ExperimentalWarning scripts/build.js",
     "build:sd": "style-dictionary build",
-    "publish": "yarn publish dist --access public"
+    "publish": "yarn publish --access public"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
