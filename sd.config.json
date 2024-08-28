@@ -3,9 +3,10 @@
   "platforms": {
     "tailwind": {
       "transformGroup": "js",
-      "buildPath": "dist/tailwind/",
+      "buildPath": "dist/tokens/tailwind/",
       "files": [
         { "destination": "theme.colors.js", "format": "tailwind-js" },
+        { "destination": "theme.colors.mjs", "format": "tailwind-mjs" },
         { "destination": "theme.colors.d.ts", "format": "tailwind-typedef" }
       ]
     }

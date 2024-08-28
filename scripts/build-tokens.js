@@ -1,7 +1,7 @@
 import StyleDictionary from "style-dictionary";
 import * as prettier from "prettier";
 
-const sd = new StyleDictionary("config.json");
+const sd = new StyleDictionary("sd.config.json");
 
 /**
  * @param {import("style-dictionary").TransformedTokens} obj
@@ -47,6 +47,17 @@ sd.registerFormat({
   format: async ({ dictionary }) => {
     return await prettier.format(
       `module.exports = ${JSON.stringify(formatGroup(dictionary.tokens))};`,
+      { parser: "babel" }
+    );
+  },
+});
+
+sd.registerFormat({
+  name: "tailwind-mjs",
+  format: async ({ dictionary }) => {
+    return await prettier.format(
+      `const tokens = ${JSON.stringify(formatGroup(dictionary.tokens))};
+      export default tokens;`,
       { parser: "babel" }
     );
   },
