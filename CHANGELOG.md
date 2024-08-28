@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.0.5
+
+### Patch Changes
+
+- [`80febd5`](https://github.com/webrecorder/hickory/commit/80febd53b82bffc7de2bc5771cbe1e7ff58d04e9) Thanks [@emma-sg](https://github.com/emma-sg)! - Rename "colors" to "color" in tokens, and output generic theme files for Tailwind
+
 ## 0.0.4
 
 ### Patch Changes
