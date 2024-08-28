@@ -441,9 +441,9 @@
   integrity sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==
 
 "@zip.js/zip.js@^2.7.44":
-  version "2.7.51"
-  resolved "https://registry.yarnpkg.com/@zip.js/zip.js/-/zip.js-2.7.51.tgz#a434e285048b951a5788d3d2d59aa68f209e7141"
-  integrity sha512-RKHaebzZZgQkUuzb49/qweN69e8Np9AUZ9QygydDIrbG1njypSAKwkeqIVeuf2JVGBDyB7Z9HKvzPgYrSlv9gw==
+  version "2.7.52"
+  resolved "https://registry.yarnpkg.com/@zip.js/zip.js/-/zip.js-2.7.52.tgz#bc11de93b41f09e03155bc178e7f9c2e2612671d"
+  integrity sha512-+5g7FQswvrCHwYKNMd/KFxZSObctLSsQOgqBSi0LzwHo3li9Eh1w5cF5ndjQw9Zbr3ajVnd2+XyiX85gAetx1Q==
 
 acorn@^8.11.3:
   version "8.12.1"
@@ -2127,10 +2127,10 @@ strip-bom@^3.0.0:
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
   integrity sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==
 
-style-dictionary@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-4.0.1.tgz#d8347d18874e7dff3f4a6faed0ddcb30c797cff0"
-  integrity sha512-aZ2iouI0i0DIXk3QhCkwOeo5rQeuk5Ja0PhHo32/EXCNuay4jK4CZ+hQJW0Er0J74VWniR+qaeoWgjklcULxOQ==
+style-dictionary@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-4.1.0.tgz#17ca6ae002470c7e8a4c3fa31f4eee1017b39152"
+  integrity sha512-DfY64t/XsL0bycnabIcIna/H1GyjK4sKLui2t0q6flr2uM+VpRNoSNCPOpi5YSouhKEFjoiC6ediyrMzraTz8A==
   dependencies:
     "@bundled-es-modules/deepmerge" "^4.3.1"
     "@bundled-es-modules/glob" "^10.4.2"

@@ -5,11 +5,12 @@ import {
   parseColors,
   isEmptyColor,
   exportJSONPackage,
+  exportToDirectory,
 } from "@iconify/tools";
+import fs from "node:fs/promises";
+import path from "node:path";
 
-import packageInfo from "../package.json" with { type: "json" };
-
-const iconSet = await importDirectory("src");
+const iconSet = await importDirectory("icons");
 
 iconSet.forEach((name, type) => {
   if (type !== "icon") {
@@ -51,20 +52,19 @@ iconSet.forEach((name, type) => {
 });
 
 // Target directory
-const target = `dist/${iconSet.prefix}`;
-
-const {scripts: _scripts, ...pkg} = packageInfo
+const target = path.join("dist", "icons", iconSet.prefix);
 
 // Export package
 await exportJSONPackage(iconSet, {
   target,
-  package: pkg,
   cleanup: true,
 });
 
-// Publish NPM package
-/*
-await execAsync('npm publish --access=public --silent', {
-    cwd: target,
+// A little hacky, but exportJSONPackage does everything we want, it just also
+// writes a package.json that we don't need
+await fs.rm(path.join(target, "package.json"));
+
+await exportToDirectory(iconSet, {
+  target: `dist/icons/svg/${iconSet.prefix}`,
+  log: true,
 });
-*/
