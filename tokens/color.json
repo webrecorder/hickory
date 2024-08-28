@@ -331,8 +331,8 @@
       }
     },
     "brand": {
-      "blue": { "$value": "{colors.cyan.400}" },
-      "green": { "$value": "{colors.lime.500}" }
+      "blue": { "$value": "{color.cyan.400}" },
+      "green": { "$value": "{color.lime.500}" }
     }
   }
 }
