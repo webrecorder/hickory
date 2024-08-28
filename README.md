@@ -15,15 +15,10 @@ Inside your Tailwind config file, set the following:
 ```js
 import theme from "@webrecorder/hickory/tokens/tailwind/theme.colors";
 
-const { colors } = theme;
-
 /** @type {import('tailwindcss').Config} */
 export default {
-  ...
-  theme: {
-    colors,
-    ...
-  }
+  // ...
+  theme,
 };
 ```
 

@@ -5,9 +5,9 @@
       "transformGroup": "js",
       "buildPath": "dist/tokens/tailwind/",
       "files": [
-        { "destination": "theme.colors.js", "format": "tailwind-js" },
-        { "destination": "theme.colors.mjs", "format": "tailwind-mjs" },
-        { "destination": "theme.colors.d.ts", "format": "tailwind-typedef" }
+        { "destination": "index.js", "format": "tailwind-js" },
+        { "destination": "index.mjs", "format": "tailwind-mjs" },
+        { "destination": "index.d.ts", "format": "tailwind-typedef" }
       ]
     }
   }
