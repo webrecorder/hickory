@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.0.6
+
+### Patch Changes
+
+- [`f8ed441`](https://github.com/webrecorder/hickory/commit/f8ed441b07a1945ffcbfc9beacbfe815c6e706e0) Thanks [@emma-sg](https://github.com/emma-sg)! - update tailwind output paths
+
 ## 0.0.5
 
 ### Patch Changes
