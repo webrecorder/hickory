@@ -7,8 +7,11 @@
     "white": {
       "$value": "#ffffff"
     },
+    "transparent": {
+      "$value": "transparent"
+    },
     "offWhite": {
-      "$value": "#f9f7f3"
+      "$value": "{color.earth.50}"
     },
     "gray": {
       "50": {
