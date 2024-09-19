@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.0.8
+
+### Patch Changes
+
+- [`c9cb232`](https://github.com/webrecorder/hickory/commit/c9cb23201de92c6d008fe012fc405738e58749e4) Thanks [@emma-sg](https://github.com/emma-sg)! - specify transforms explicitly and swap to `color/css` from `color/hex`
+
 ## 0.0.7
 
 ### Patch Changes
