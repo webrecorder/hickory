@@ -2,7 +2,7 @@
   "source": ["tokens/**/*.json"],
   "platforms": {
     "tailwind": {
-      "transformGroup": "js",
+      "transforms": ["attribute/cti", "name/pascal", "size/rem", "color/css"],
       "buildPath": "dist/tokens/",
       "files": [
         { "destination": "tailwind.js", "format": "tailwind-js" },
