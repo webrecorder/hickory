@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.0.7
+
+### Patch Changes
+
+- [`fbe38c0`](https://github.com/webrecorder/hickory/commit/fbe38c06ebe795dff23a49fd2ca62593cd5ebc2e) Thanks [@emma-sg](https://github.com/emma-sg)! - add transparent color, and use alias for off-white
+
 ## 0.0.6
 
 ### Patch Changes
