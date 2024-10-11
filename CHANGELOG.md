@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.0.9
+
+### Patch Changes
+
+- [`1d2580b`](https://github.com/webrecorder/hickory/commit/1d2580bdacaab9507bc0c583a19abc2d526a6499) Thanks [@emma-sg](https://github.com/emma-sg)! - add earth 25 color
+
 ## 0.0.8
 
 ### Patch Changes
