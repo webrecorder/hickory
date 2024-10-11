@@ -13,7 +13,7 @@ Tokens live within the `tokens` folder. Currently we've just got primitive color
 Inside your Tailwind config file, set the following:
 
 ```js
-import theme from "@webrecorder/hickory/tokens/tailwind/theme.colors";
+import theme from "@webrecorder/hickory/tokens/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
