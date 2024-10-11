@@ -1,5 +1,13 @@
 # @webrecorder/hickory
 
+## 0.0.10
+
+### Patch Changes
+
+- [`fd114b9`](https://github.com/webrecorder/hickory/commit/fd114b9b8b493dfc5aa80737f70a28a35c49624d) Thanks [@emma-sg](https://github.com/emma-sg)! - add default `colors` export to tailwind generated file for tailwind compat
+
+- [`38e88f0`](https://github.com/webrecorder/hickory/commit/38e88f04018f65245979ba4ac13f3740c3270ead) Thanks [@emma-sg](https://github.com/emma-sg)! - correct out-of-date readme example
+
 ## 0.0.9
 
 ### Patch Changes
