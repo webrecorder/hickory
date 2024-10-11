@@ -46,7 +46,9 @@ sd.registerFormat({
   name: "tailwind-js",
   format: async ({ dictionary }) => {
     return await prettier.format(
-      `module.exports = ${JSON.stringify(formatGroup(dictionary.tokens))};`,
+      `const tokens = ${JSON.stringify(formatGroup(dictionary.tokens))};
+      module.exports = tokens;
+      module.exports.colors = tokens.color ?? {};`,
       { parser: "babel" }
     );
   },
@@ -57,6 +59,7 @@ sd.registerFormat({
   format: async ({ dictionary }) => {
     return await prettier.format(
       `const tokens = ${JSON.stringify(formatGroup(dictionary.tokens))};
+      export const colors = tokens.color ?? {};
       export default tokens;`,
       { parser: "babel" }
     );
@@ -68,7 +71,8 @@ sd.registerFormat({
   format: async ({ dictionary }) => {
     return await prettier.format(
       `declare const tokens: {${declareGroup(dictionary.tokens)}};
-  export default tokens;`,
+      export const colors = tokens.color;
+      export default tokens;`,
       { parser: "typescript" }
     );
   },
