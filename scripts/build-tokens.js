@@ -42,6 +42,29 @@ function declareGroup(obj) {
   return res;
 }
 
+/**
+ * @param {import("style-dictionary").TransformedTokens} obj
+ */
+function formatCssGroup(obj, prefix = "") {
+  /** @typedef {string | {[key: string]: OutputColor}} OutputColor */
+  /** @type {OutputColor} */
+  let res = "";
+  const entries = Object.entries(obj);
+  entries.forEach(([k, v]) => {
+    if (typeof v !== "object") return;
+    if (Object.hasOwn(v, "$value")) {
+      console.log("a", { k, v: v.$value, prefix });
+      res += `--${prefix}${k}: ${v.$value};
+      `;
+    } else {
+      console.log("b", { k });
+      res += `
+      ${formatCssGroup(v, `${prefix}${k}-`)}`;
+    }
+  });
+  return res;
+}
+
 sd.registerFormat({
   name: "tailwind-js",
   format: async ({ dictionary }) => {
@@ -74,6 +97,19 @@ sd.registerFormat({
       export const colors = tokens.color;
       export default tokens;`,
       { parser: "typescript" }
+    );
+  },
+});
+
+sd.registerFormat({
+  name: "tailwind-css",
+  format: async ({ dictionary }) => {
+    return await prettier.format(
+      `@theme {
+      --color-*: initial;
+  ${formatCssGroup(dictionary.tokens)}
+}`,
+      { parser: "css" }
     );
   },
 });

@@ -37,7 +37,8 @@
     "./*": {
       "types": "./dist/*.d.ts",
       "require": "./dist/*.js",
-      "import": "./dist/*.mjs"
+      "import": "./dist/*.mjs",
+      "default": "./dist/*"
     },
     "./icons": {
       "types": "./index.d.ts",
