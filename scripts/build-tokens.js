@@ -14,6 +14,10 @@ function formatGroup(obj) {
   entries.forEach(([k, v]) => {
     if (typeof v !== "object") return;
     if (Object.hasOwn(v, "$value")) {
+      if (k === "$default") {
+        k = "DEFAULT";
+      }
+
       res[k] = v.$value;
     } else {
       res[k] = formatGroup(v);
@@ -31,6 +35,9 @@ function declareGroup(obj) {
   entries.forEach(([k, v]) => {
     if (typeof v !== "object") return;
     if (Object.hasOwn(v, "$value")) {
+      if (k === "$default") {
+        k = "DEFAULT";
+      }
       res += `readonly ${JSON.stringify(k)}: ${JSON.stringify(v.$value)};
       `;
     } else {
@@ -53,11 +60,14 @@ function formatCssGroup(obj, prefix = "") {
   entries.forEach(([k, v]) => {
     if (typeof v !== "object") return;
     if (Object.hasOwn(v, "$value")) {
-      console.log("a", { k, v: v.$value, prefix });
-      res += `--${prefix}${k}: ${v.$value};
+      if (k === "$default") {
+        res += `--${prefix.split("-").filter(Boolean).join("-")}: ${v.$value};
       `;
+      } else {
+        res += `--${prefix}${k}: ${v.$value};
+      `;
+      }
     } else {
-      console.log("b", { k });
       res += `
       ${formatCssGroup(v, `${prefix}${k}-`)}`;
     }
