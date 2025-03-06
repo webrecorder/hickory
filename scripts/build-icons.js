@@ -33,9 +33,9 @@ iconSet.forEach((name, type) => {
     // If icon is not monotone, remove this code
     parseColors(svg, {
       defaultColor: "currentColor",
-      callback: (attr, colorStr, color) => {
-        return !color || isEmptyColor(color) ? colorStr : "currentColor";
-      },
+      // callback: (attr, colorStr, color) => {
+      //   return !color || isEmptyColor(color) ? colorStr : "currentColor";
+      // },
     });
 
     // Optimize
