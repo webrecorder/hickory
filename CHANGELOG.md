@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.2.1
+
+### Patch Changes
+
+- [#33](https://github.com/webrecorder/hickory/pull/33) [`85e8fa0`](https://github.com/webrecorder/hickory/commit/85e8fa00d438ac546f17afdd13db419f74c79b10) Thanks [@emma-sg](https://github.com/emma-sg)! - Preserve icon colors
+
 ## 0.2.0
 
 ### Minor Changes
