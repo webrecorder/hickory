@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.1.0
+
+### Minor Changes
+
+- [#29](https://github.com/webrecorder/hickory/pull/29) [`4be2bb2`](https://github.com/webrecorder/hickory/commit/4be2bb2524d6d30c8dcdea0f2d573309aaa54cd9) Thanks [@emma-sg](https://github.com/emma-sg)! - Add Tailwind 4 support
+
 ## 0.0.10
 
 ### Patch Changes
