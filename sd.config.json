@@ -7,7 +7,8 @@
       "files": [
         { "destination": "tailwind.js", "format": "tailwind-js" },
         { "destination": "tailwind.mjs", "format": "tailwind-mjs" },
-        { "destination": "tailwind.d.ts", "format": "tailwind-typedef" }
+        { "destination": "tailwind.d.ts", "format": "tailwind-typedef" },
+        { "destination": "tailwind.css", "format": "tailwind-css" }
       ]
     }
   }

@@ -14,6 +14,10 @@ function formatGroup(obj) {
   entries.forEach(([k, v]) => {
     if (typeof v !== "object") return;
     if (Object.hasOwn(v, "$value")) {
+      if (k === "$default") {
+        k = "DEFAULT";
+      }
+
       res[k] = v.$value;
     } else {
       res[k] = formatGroup(v);
@@ -31,12 +35,41 @@ function declareGroup(obj) {
   entries.forEach(([k, v]) => {
     if (typeof v !== "object") return;
     if (Object.hasOwn(v, "$value")) {
+      if (k === "$default") {
+        k = "DEFAULT";
+      }
       res += `readonly ${JSON.stringify(k)}: ${JSON.stringify(v.$value)};
       `;
     } else {
       res += `readonly ${JSON.stringify(k)}: {
   ${declareGroup(v)}};
   `;
+    }
+  });
+  return res;
+}
+
+/**
+ * @param {import("style-dictionary").TransformedTokens} obj
+ */
+function formatCssGroup(obj, prefix = "") {
+  /** @typedef {string | {[key: string]: OutputColor}} OutputColor */
+  /** @type {OutputColor} */
+  let res = "";
+  const entries = Object.entries(obj);
+  entries.forEach(([k, v]) => {
+    if (typeof v !== "object") return;
+    if (Object.hasOwn(v, "$value")) {
+      if (k === "$default") {
+        res += `--${prefix.split("-").filter(Boolean).join("-")}: ${v.$value};
+      `;
+      } else {
+        res += `--${prefix}${k}: ${v.$value};
+      `;
+      }
+    } else {
+      res += `
+      ${formatCssGroup(v, `${prefix}${k}-`)}`;
     }
   });
   return res;
@@ -74,6 +107,19 @@ sd.registerFormat({
       export const colors = tokens.color;
       export default tokens;`,
       { parser: "typescript" }
+    );
+  },
+});
+
+sd.registerFormat({
+  name: "tailwind-css",
+  format: async ({ dictionary }) => {
+    return await prettier.format(
+      `@theme {
+      --color-*: initial;
+  ${formatCssGroup(dictionary.tokens)}
+}`,
+      { parser: "css" }
     );
   },
 });
