@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.2.0
+
+### Minor Changes
+
+- [#31](https://github.com/webrecorder/hickory/pull/31) [`814e84a`](https://github.com/webrecorder/hickory/commit/814e84ad7f6463ce55f2cba3e76609175182905e) Thanks [@emma-sg](https://github.com/emma-sg)! - Add all brand icons from website
+
 ## 0.1.0
 
 ### Minor Changes
