@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.3.1
+
+### Patch Changes
+
+- [`3abc189`](https://github.com/webrecorder/hickory/commit/3abc1898105071a20728aa65f7014f80e7fdaf6f) Thanks [@emma-sg](https://github.com/emma-sg)! - Fix wrong iconset being made uniform color
+
 ## 0.3.0
 
 ### Minor Changes
