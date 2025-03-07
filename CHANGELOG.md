@@ -1,5 +1,15 @@
 # @webrecorder/hickory
 
+## 0.3.0
+
+### Minor Changes
+
+- [#35](https://github.com/webrecorder/hickory/pull/35) [`4be730d`](https://github.com/webrecorder/hickory/commit/4be730db3c09d8625ee323e8d964be436c8c8668) Thanks [@emma-sg](https://github.com/emma-sg)! - Set up multiple iconsets, separating brand icons from product icons
+
+### Patch Changes
+
+- [#35](https://github.com/webrecorder/hickory/pull/35) [`4be730d`](https://github.com/webrecorder/hickory/commit/4be730db3c09d8625ee323e8d964be436c8c8668) Thanks [@emma-sg](https://github.com/emma-sg)! - Enable prettier
+
 ## 0.2.1
 
 ### Patch Changes
