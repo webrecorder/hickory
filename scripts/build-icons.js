@@ -78,8 +78,8 @@ const processIcons = async (iconSet, iconSetName, options = {}) => {
 };
 
 await Promise.all([
-  processIcons(await importDirectory("iconsets/icons"), "icons"),
-  processIcons(await importDirectory("iconsets/brand"), "brand", {
+  processIcons(await importDirectory("iconsets/icons"), "icons", {
     makeUniformColor: true,
   }),
+  processIcons(await importDirectory("iconsets/brand"), "brand"),
 ]);
