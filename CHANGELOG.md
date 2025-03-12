@@ -1,5 +1,11 @@
 # @webrecorder/hickory
 
+## 0.4.0
+
+### Minor Changes
+
+- [`0de09c5`](https://github.com/webrecorder/hickory/commit/0de09c5934366bba039ab2242258a52347546c6f) Thanks [@emma-sg](https://github.com/emma-sg)! - add animated replaywebpage icon
+
 ## 0.3.1
 
 ### Patch Changes
